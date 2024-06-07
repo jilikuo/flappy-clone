@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float push_strenght;
+
+    private void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PushUp();
+        }
+    }
+
+    void PushUp()
+    {
+        this.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * push_strenght, ForceMode2D.Impulse);
     }
 }
