@@ -990,8 +990,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17edad3e3ab2dc418a250ee1a3e1e26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 2
+  cooldown: 3
+  current_cooldown: 0
   obstacle: {fileID: 1407265181806683859, guid: 5506f90380d42094d955e17fa6098077, type: 3}
+  score_manager: {fileID: 1760293409}
 --- !u!4 &1012548897
 Transform:
   m_ObjectHideFlags: 0
