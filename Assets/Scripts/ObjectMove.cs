@@ -8,7 +8,7 @@ public class ObjectMove : MonoBehaviour
 
     void Start()
     {
-
+        Destroy(this.gameObject, 15);
 
     }
 

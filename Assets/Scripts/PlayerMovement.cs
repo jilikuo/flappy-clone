@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float push_strenght;
     public GameObject game_over;
+    public GameObject score_manager;
 
     private void Start()
     {
@@ -26,6 +27,14 @@ public class PlayerMovement : MonoBehaviour
         {
             this.enabled = false;
             game_over.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Goal" && this.enabled == true)
+        {
+            score_manager.GetComponent<ScoreManager>().score += 1;
         }
     }
 
