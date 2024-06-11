@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float push_strenght;
+    public GameObject game_over;
 
     private void Start()
     {
@@ -16,6 +17,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             PushUp();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Wall")
+        {
+            this.enabled = false;
+            game_over.SetActive(true);
         }
     }
 
