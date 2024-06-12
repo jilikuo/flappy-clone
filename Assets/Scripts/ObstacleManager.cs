@@ -41,7 +41,7 @@ public class ObstacleManager : MonoBehaviour
 
     private void cooldown_manager()
     {
-        current_cooldown = (initial_cooldown - score_manager.GetComponent<ScoreManager>().score/500f - spawned_obstacles/80f);
+        current_cooldown = (initial_cooldown - score_manager.GetComponent<ScoreManager>().score/1000f - spawned_obstacles/60f);
     }
 
 }
